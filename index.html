@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Sreesangeethan Portfolio</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
@@ -10,15 +9,13 @@
   <link rel="stylesheet" href="utility.css">
   <link rel="stylesheet" href="style.css">
 
-  <!-- fontawesome -->
+  <!-- fontawesome & Google Fonts -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    integrity="sha512-…"
     crossorigin="anonymous"
   />
-
-  <!-- google fonts -->
   <link
     href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap"
     rel="stylesheet"
@@ -32,24 +29,25 @@
       <a href="#home" class="navbar-brand">Sree</a>
       <button id="navbar-toggler" class="navbar-toggler"><i class="fas fa-bars"></i></button>
       <ul class="navbar-nav">
-        <li class="nav-item"><a href="#home"    class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="#about"   class="nav-link">About</a></li>
-        <li class="nav-item"><a href="#resume"  class="nav-link">Resume</a></li>
-        <li class="nav-item"><a href="#services"class="nav-link">Services</a></li>
-        <li class="nav-item"><a href="#skills"  class="nav-link">Skills</a></li>
-        <li class="nav-item"><a href="#projects"class="nav-link">Projects</a></li>
-        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="#home"    class="nav-link">Home</a></li>
+        <li><a href="#about"   class="nav-link">About</a></li>
+        <li><a href="#resume"  class="nav-link">Resume</a></li>
+        <li><a href="#services"class="nav-link">Services</a></li>
+        <li><a href="#skills"  class="nav-link">Skills</a></li>
+        <li><a href="#projects"class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- ===== HOME ===== -->
+  <!-- ===== HOME HERO ===== -->
   <section id="home" class="section home container">
+    <div class="overlay"></div>
     <div class="row">
       <div class="row-left">
         <h3>Hello!</h3>
         <h1>I'm <span>Sreesangeethan</span></h1>
-        <h2>Freelancer | AI Enthusiast | Critical Thinker | Business Strategist | Photographer</h2>
+        <h2>Freelancer | AI Enthusiast | Creative Strategist</h2>
         <div class="home-pg-btn">
           <a href="#contact" class="btn">Hire me</a>
           <a href="#projects" class="btn">My works</a>
@@ -57,7 +55,7 @@
       </div>
       <div class="row-right">
         <div class="img-border">
-          <img src="assets/Sree.jpg" alt="Sreesangeethan">
+          <img src="assets/Sree.jpg" alt="Profile photo">
         </div>
       </div>
     </div>
@@ -72,12 +70,12 @@
       </div>
       <div class="row-right">
         <p class="text">
-          I'm passionate about leveraging technology to simplify and enhance people's lives...
+          I'm passionate about leveraging technology to simplify and enhance lives...
         </p>
         <ul class="about-content">
           <li><span>Name:</span><span>Sreesangeethan</span></li>
           <li><span>DOB:</span><span>July 26, 1998</span></li>
-          <li><span>Address:</span><span>203 Temple Road, Nallur, Jaffna</span></li>
+          <li><span>Location:</span><span>Jaffna, Sri Lanka</span></li>
           <li><span>Email:</span><span>sreegeethansree@gmail.com</span></li>
           <li><span>Phone:</span><span>+94 77 4304 965</span></li>
         </ul>
@@ -90,15 +88,16 @@
   <!-- ===== RESUME ===== -->
   <section id="resume" class="section resume container">
     <div class="section-header"><h2>Resume</h2></div>
-    <p class="text">With a diverse journey spanning from high school ...</p>
+    <p class="text">
+      With a journey spanning high school to freelancing and undergrad studies...
+    </p>
     <div class="row">
-      <!-- repeat .item as needed -->
       <div class="item">
-        <span>2020 – Present</span>
+        <span>2020–Present</span>
         <h2>Freelancer – <span>For Hire</span></h2>
         <p class="text">Offering versatile freelance services …</p>
       </div>
-      <!-- … -->
+      <!-- add more .item blocks as needed -->
     </div>
   </section>
 
@@ -108,15 +107,14 @@
     <p class="text">We offer a diverse array of solutions …</p>
     <div class="row">
       <div class="item"><i class="fas fa-robot fa-3x"></i><h2>AI Projects</h2></div>
+      <div class="item"><i class="fas fa-camera-retro fa-3x"></i><h2>Photography</h2></div>
       <!-- … -->
     </div>
-    <a href="#contact" class="btn">View More</a>
   </section>
 
   <!-- ===== SKILLS ===== -->
   <section id="skills" class="section skills container">
     <div class="section-header"><h2>Skills</h2></div>
-    <p class="text">I thrive on finding innovative solutions …</p>
     <div class="row">
       <div class="item">
         <div class="item-text"><span>Photoshop</span><span>90%</span></div>
@@ -129,7 +127,6 @@
   <!-- ===== PROJECTS ===== -->
   <section id="projects" class="section projects container">
     <div class="section-header"><h2>Projects</h2></div>
-    <p class="text">We are currently working on enhancing …</p>
     <div class="row">
       <div class="item" style="background:url(assets/project1.jpg)center/cover;">
         <div class="item-overlay">
@@ -152,8 +149,8 @@
       </div>
       <div class="col-right">
         <form class="contact-form">
-          <input type="text" placeholder="Your Name" required>
-          <input type="email" placeholder="Your Email" required>
+          <input type="text"    placeholder="Your Name"    required>
+          <input type="email"   placeholder="Your Email"   required>
           <textarea placeholder="Your Message" required></textarea>
           <button type="submit" class="btn">Send</button>
         </form>
@@ -161,12 +158,12 @@
     </div>
   </section>
 
-  <!-- footer -->
+  <!-- ===== FOOTER ===== -->
   <footer class="footer container">
     <div class="row">
       <div class="col">
         <h3>About</h3>
-        <p class="text">I like developing tools using technology …</p>
+        <p class="text">I like developing tools that make life easier …</p>
       </div>
       <!-- … -->
     </div>
