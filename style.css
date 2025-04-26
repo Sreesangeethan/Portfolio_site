@@ -1,27 +1,33 @@
-/* === GLOBAL SECTION STYLES === */
-.section {
-  padding: 100px 20px;
-  scroll-margin-top: 80px;
-  position: relative;
-}
-.section:nth-of-type(odd)  { background: #111; }
-.section:nth-of-type(even) { background: #222; }
+/* utility.css still provides your colors, fonts & resets */
 
-/* === HERO BACKGROUND & OVERLAY === */
+/* — HERO SECTION — */
 .home {
+  position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
   background: url('assets/hero-bg.jpg') center/cover no-repeat;
 }
-.home .overlay {
+.home::before {
+  content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.5);
 }
-.home .row { position: relative; z-index: 1; }
+.home .row {
+  position: relative;
+  z-index: 1;
+}
 
-/* === NAVBAR === */
+/* — GLOBAL SECTION LAYOUT — */
+.section {
+  padding: 5rem 2rem;
+  scroll-margin-top: 80px;
+}
+.section:nth-of-type(even)  { background: #111; }
+.section:nth-of-type(odd)   { background: #222; }
+
+/* — STICKY, TRANSPARENT → SOLID NAVBAR — */
 .navbar {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -30,9 +36,11 @@
   z-index: 1000;
 }
 .navbar.scrolled {
-  background: rgba(0,0,0,0.9);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  background: #111;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.6);
 }
+
+/* — NAVBAR CONTENT — */
 .navbar .container {
   display: flex;
   justify-content: space-between;
@@ -43,23 +51,30 @@
   background: none;
   border: none;
   color: #fff;
+  cursor: pointer;
 }
 .navbar-nav {
   display: none;
   flex-direction: column;
+  margin-top: 1rem;
 }
 .navbar-nav.showNav {
   display: flex;
 }
+.navbar-nav li {
+  list-style: none;
+  margin: 0.5rem 0;
+}
 .nav-link {
   color: #fff;
-  padding: 0.5rem;
   text-transform: uppercase;
+  font-weight: 600;
+  padding: 0.5rem;
   position: relative;
-  transition: color 0.3s;
+  transition: color 0.2s;
 }
-.nav-link.active,
-.nav-link:hover {
+.nav-link:hover,
+.nav-link.active {
   color: var(--green);
 }
 .nav-link.active::after {
@@ -71,22 +86,35 @@
   background: var(--green);
 }
 
-/* === ROW LAYOUT === */
+/* — RESPONSIVE NAV AT WIDE — */
+@media(min-width:992px) {
+  .navbar-toggler { display: none; }
+  .navbar-nav {
+    display: flex !important;
+    flex-direction: row;
+    margin: 0;
+  }
+  .navbar-nav li {
+    margin: 0 1rem;
+  }
+}
+
+/* — GRID LAYOUT FOR EACH SECTION — */
 .row {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
 }
 @media(min-width:768px) {
-  .home .row { grid-template-columns: 1fr 1fr; }
-  .about .row,
-  .resume .row,
+  .home .row    { grid-template-columns: 1fr 1fr; }
+  .about .row   { grid-template-columns: 1fr 1fr; }
+  .resume .row, 
   .services .row { grid-template-columns: repeat(2,1fr); }
-  .skills .row    { grid-template-columns: repeat(2,1fr); }
-  .projects .row  { grid-template-columns: repeat(3,1fr); }
+  .skills .row  { grid-template-columns: repeat(2,1fr); }
+  .projects .row{ grid-template-columns: repeat(3,1fr); }
 }
 
-/* === IMAGE BORDER === */
+/* — IMAGE BORDER — */
 .img-border {
   width: 260px; height: 260px;
   border: 4px solid var(--nero);
@@ -94,8 +122,15 @@
   overflow: hidden;
 }
 
-/* === BUTTON HOVER === */
+/* — BUTTON STYLES — */
 .btn {
+  display: inline-block;
+  background: var(--green);
+  color: #111;
+  padding: 0.8rem 1.5rem;
+  border-radius: 35px;
+  text-transform: uppercase;
+  font-weight:700;
   transition: transform 0.2s, opacity 0.2s;
 }
 .btn:hover {
@@ -103,32 +138,34 @@
   opacity: 0.9;
 }
 
-/* === FADE-IN ON SCROLL === */
-@keyframes fadeInUp {
-  from { opacity:0; transform: translateY(20px); }
-  to   { opacity:1; transform: translateY(0); }
-}
+/* — REVEAL ON SCROLL — */
 .reveal {
   opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 .reveal.active {
-  animation: fadeInUp 0.6s forwards;
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* === OVERLAY ON PROJECT CARDS === */
+/* — PROJECT OVERLAY — */
+.item {
+  position: relative;
+  overflow: hidden;
+}
 .item-overlay {
-  position: absolute; inset:0;
+  position: absolute;
+  inset: 0;
   background: rgba(114,182,38,0.9);
   color: #111;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  opacity:0;
-  transition: opacity 0.4s;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 .item:hover .item-overlay {
   opacity: 1;
 }
-
-/* (your existing utility.css provides colors, fonts, reset, etc.) */
