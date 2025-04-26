@@ -1,77 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sreesangeethan Portfolio</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-
-  <!-- utility & main CSS -->
-  <link rel="stylesheet" href="utility.css">
-  <link rel="stylesheet" href="style.css">
-
-  <!-- fontawesome & Google Fonts -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-    integrity="sha512-…"
-    crossorigin="anonymous"
-  />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet"
-  >
+  <!-- Utility & Main CSS -->
+  <link rel="stylesheet" href="css/utility.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
-
-  <!-- ===== NAVBAR ===== -->
+  <!-- NAVBAR -->
   <nav class="navbar">
     <div class="container">
       <a href="#home" class="navbar-brand">Sree</a>
       <button id="navbar-toggler" class="navbar-toggler"><i class="fas fa-bars"></i></button>
       <ul class="navbar-nav">
-        <li><a href="#home"    class="nav-link">Home</a></li>
-        <li><a href="#about"   class="nav-link">About</a></li>
-        <li><a href="#resume"  class="nav-link">Resume</a></li>
-        <li><a href="#services"class="nav-link">Services</a></li>
-        <li><a href="#skills"  class="nav-link">Skills</a></li>
-        <li><a href="#projects"class="nav-link">Projects</a></li>
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#resume" class="nav-link">Resume</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- ===== HOME HERO ===== -->
+  <!-- HOME SECTION -->
   <section id="home" class="section home container">
-    <div class="overlay"></div>
     <div class="row">
       <div class="row-left">
         <h3>Hello!</h3>
         <h1>I'm <span>Sreesangeethan</span></h1>
         <h2>Freelancer | AI Enthusiast | Creative Strategist</h2>
         <div class="home-pg-btn">
-          <a href="#contact" class="btn">Hire me</a>
-          <a href="#projects" class="btn">My works</a>
+          <a href="#contact" class="btn">Hire Me</a>
+          <a href="#projects" class="btn">My Works</a>
         </div>
       </div>
       <div class="row-right">
         <div class="img-border">
-          <img src="assets/Sree.jpg" alt="Profile photo">
+          <img src="assets/Sree.jpg" alt="Profile">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== ABOUT ===== -->
+  <!-- ABOUT SECTION -->
   <section id="about" class="section about container">
     <div class="section-header"><h2>About</h2></div>
     <div class="row">
-      <div class="row-left">
-        <img src="assets/Sree_001.jpg" alt="About me">
-      </div>
+      <div class="row-left"><img src="assets/Sree_001.jpg" alt="About me"></div>
       <div class="row-right">
-        <p class="text">
-          I'm passionate about leveraging technology to simplify and enhance lives...
-        </p>
+        <p class="text">I'm passionate about leveraging technology...</p>
         <ul class="about-content">
           <li><span>Name:</span><span>Sreesangeethan</span></li>
           <li><span>DOB:</span><span>July 26, 1998</span></li>
@@ -85,60 +71,56 @@
     </div>
   </section>
 
-  <!-- ===== RESUME ===== -->
+  <!-- RESUME SECTION -->
   <section id="resume" class="section resume container">
     <div class="section-header"><h2>Resume</h2></div>
-    <p class="text">
-      With a journey spanning high school to freelancing and undergrad studies...
-    </p>
+    <p class="text">With a journey spanning high school to freelancing and undergrad...</p>
     <div class="row">
-      <div class="item">
+      <div class="item reveal">
         <span>2020–Present</span>
         <h2>Freelancer – <span>For Hire</span></h2>
         <p class="text">Offering versatile freelance services …</p>
       </div>
-      <!-- add more .item blocks as needed -->
+      <!-- Add more .item blocks as needed -->
     </div>
   </section>
 
-  <!-- ===== SERVICES ===== -->
+  <!-- SERVICES SECTION -->
   <section id="services" class="section services container">
     <div class="section-header"><h2>Services</h2></div>
     <p class="text">We offer a diverse array of solutions …</p>
     <div class="row">
-      <div class="item"><i class="fas fa-robot fa-3x"></i><h2>AI Projects</h2></div>
-      <div class="item"><i class="fas fa-camera-retro fa-3x"></i><h2>Photography</h2></div>
+      <div class="item reveal"><i class="fas fa-robot fa-3x"></i><h2>AI Projects</h2></div>
+      <div class="item reveal"><i class="fas fa-camera-retro fa-3x"></i><h2>Photography</h2></div>
       <!-- … -->
     </div>
   </section>
 
-  <!-- ===== SKILLS ===== -->
+  <!-- SKILLS SECTION -->
   <section id="skills" class="section skills container">
     <div class="section-header"><h2>Skills</h2></div>
+    <p class="text">I thrive on finding innovative solutions …</p>
     <div class="row">
-      <div class="item">
+      <div class="item reveal">
         <div class="item-text"><span>Photoshop</span><span>90%</span></div>
-        <div class="progress"><div class="progress-bar" style=" "></div></div>
+        <div class="progress"><div class="progress-bar" style="width:90%"></div></div>
       </div>
       <!-- … -->
     </div>
   </section>
 
-  <!-- ===== PROJECTS ===== -->
+  <!-- PROJECTS SECTION -->
   <section id="projects" class="section projects container">
     <div class="section-header"><h2>Projects</h2></div>
     <div class="row">
-      <div class="item" style="background:url(assets/project1.jpg)center/cover;">
-        <div class="item-overlay">
-          <h3>Innovative Solutions</h3>
-          <p>Explore our approach …</p>
-        </div>
+      <div class="item reveal" style="background:url('assets/project1.jpg')center/cover;">
+        <div class="item-overlay"><h3>Innovative Solutions</h3><p>Explore our approach …</p></div>
       </div>
       <!-- … -->
     </div>
   </section>
 
-  <!-- ===== CONTACT ===== -->
+  <!-- CONTACT SECTION -->
   <section id="contact" class="section contact container">
     <div class="section-header"><h2>Contact</h2></div>
     <div class="row">
@@ -149,8 +131,8 @@
       </div>
       <div class="col-right">
         <form class="contact-form">
-          <input type="text"    placeholder="Your Name"    required>
-          <input type="email"   placeholder="Your Email"   required>
+          <input type="text" placeholder="Your Name" required>
+          <input type="email" placeholder="Your Email" required>
           <textarea placeholder="Your Message" required></textarea>
           <button type="submit" class="btn">Send</button>
         </form>
@@ -158,16 +140,13 @@
     </div>
   </section>
 
-  <!-- ===== FOOTER ===== -->
+  <!-- FOOTER -->
   <footer class="footer container">
     <div class="row">
-      <div class="col">
-        <h3>About</h3>
-        <p class="text">I like developing tools that make life easier …</p>
-      </div>
+      <div class="col"><h3>About</h3><p class="text">I like developing tools that make life easier …</p></div>
       <!-- … -->
     </div>
-    <p class="footer-text text-center">&copy; 2025 Sreesangeethan. All rights reserved.</p>
+    <p class="footer-text text-center">© 2025 Sreesangeethan. All rights reserved.</p>
   </footer>
 
   <script src="script.js"></script>
