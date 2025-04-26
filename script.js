@@ -1,34 +1,51 @@
-// navbar toggle on mobile
+// NAVBAR TOGGLE
 const navToggler = document.getElementById('navbar-toggler');
 const navMenu    = document.querySelector('.navbar-nav');
+const navbar     = document.querySelector('.navbar');
+
 navToggler.addEventListener('click', () => {
   navMenu.classList.toggle('showNav');
 });
 
-// highlight menu on scroll
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-link');
+// CHANGE NAVBAR ON SCROLL
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) navbar.classList.add('scrolled');
+  else navbar.classList.remove('scrolled');
+});
 
-function onScroll() {
+// SMOOTH ACTIVE LINK ON SCROLL
+const sections = document.querySelectorAll('section[id]');
+const links    = document.querySelectorAll('.nav-link');
+
+function highlightLink() {
   const scrollY = window.pageYOffset;
-  sections.forEach(section => {
-    const top    = section.offsetTop - 100;
-    const height = section.offsetHeight;
-    const id     = section.getAttribute('id');
-    if (scrollY >= top && scrollY < top + height) {
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + id) {
-          link.classList.add('active');
-        }
-      });
+  sections.forEach(sec => {
+    const top    = sec.offsetTop - 120;
+    const bottom = top + sec.offsetHeight;
+    const id     = sec.getAttribute('id');
+    if (scrollY >= top && scrollY < bottom) {
+      links.forEach(l => l.classList.remove('active'));
+      document.querySelector('.nav-link[href="#'+id+'"]').classList.add('active');
     }
   });
 }
-window.addEventListener('scroll', onScroll);
-onScroll();  // init on load
+window.addEventListener('scroll', highlightLink);
+highlightLink();
 
-// prevent transition on resize
+// REVEAL ON SCROLL
+document.querySelectorAll('.section').forEach(s => s.classList.add('reveal'));
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// RESIZE TRANSITION STOPPER
 let resizeTimer;
 window.addEventListener('resize', () => {
   document.body.classList.add('resize-animation-stopper');
