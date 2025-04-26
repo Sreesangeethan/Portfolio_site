@@ -1,51 +1,51 @@
-// NAVBAR TOGGLE
-const navToggler = document.getElementById('navbar-toggler');
-const navMenu    = document.querySelector('.navbar-nav');
-const navbar     = document.querySelector('.navbar');
-
-navToggler.addEventListener('click', () => {
-  navMenu.classList.toggle('showNav');
+// 1) NAVBAR TOGGLE
+const toggler = document.getElementById('navbar-toggler');
+const navList = document.querySelector('.navbar-nav');
+toggler.addEventListener('click', () => {
+  navList.classList.toggle('showNav');
 });
 
-// CHANGE NAVBAR ON SCROLL
+// 2) STICKY → SOLID NAVBAR
+const navbar = document.querySelector('.navbar');
 window.addEventListener('scroll', () => {
   if (window.scrollY > 50) navbar.classList.add('scrolled');
   else navbar.classList.remove('scrolled');
 });
 
-// SMOOTH ACTIVE LINK ON SCROLL
+// 3) ACTIVE LINK HIGHLIGHT
 const sections = document.querySelectorAll('section[id]');
 const links    = document.querySelectorAll('.nav-link');
-
-function highlightLink() {
-  const scrollY = window.pageYOffset;
+function highlight() {
+  const y = window.pageYOffset;
   sections.forEach(sec => {
-    const top    = sec.offsetTop - 120;
+    const top    = sec.offsetTop - 100;
     const bottom = top + sec.offsetHeight;
-    const id     = sec.getAttribute('id');
-    if (scrollY >= top && scrollY < bottom) {
+    if (y >= top && y < bottom) {
       links.forEach(l => l.classList.remove('active'));
-      document.querySelector('.nav-link[href="#'+id+'"]').classList.add('active');
+      document.querySelector(`.nav-link[href="#${sec.id}"]`)
+              .classList.add('active');
     }
   });
 }
-window.addEventListener('scroll', highlightLink);
-highlightLink();
+window.addEventListener('scroll', highlight);
+highlight();  // on load
 
-// REVEAL ON SCROLL
-document.querySelectorAll('.section').forEach(s => s.classList.add('reveal'));
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('active');
-      observer.unobserve(entry.target);
+// 4) FADE IN ON SCROLL
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('active');
+      observer.unobserve(e.target);
     }
   });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+document.querySelectorAll('.section').forEach(s => {
+  s.classList.add('reveal');
+  observer.observe(s);
+});
 
-// RESIZE TRANSITION STOPPER
+// 5) STOP TRANSITIONS ON RESIZE
 let resizeTimer;
 window.addEventListener('resize', () => {
   document.body.classList.add('resize-animation-stopper');
